@@ -65,11 +65,15 @@ The front end and back end will begin communicating when the HTTP connection com
 
 You may send additional runtime events to the backend via the instructions presented at the proxy.html page.
 
+#### Running Node from Java
+
+If the Node server is always to be run in conjunction with the Java TCP server, consider use of a ProcessBuilder which can launch, manage and monitor the Node JS server. 
+
 #### License
 
 This software is released under the MIT license http://opensource.org/licenses/MIT.
 
-### Contact
+#### Contact
 
 Forward any feedback to the author at josh dot dickson at wpi dot edu.
 
