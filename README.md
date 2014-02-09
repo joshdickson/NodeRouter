@@ -48,3 +48,30 @@ function sendPayload() {
  	setTimeout(sendPayload, waitTime);
 }
 ```
+
+#### Running
+
+To run the NodeRouter project, you must have Node JS, Socket.io, and node-static installed as well as a JVM. NodeRouter includes a ```package.json``` file to pull the requisite node dependencies once they are installed via npm (Node package manager)
+
+1. Install Node JS, Socket.io and node-static, along with a JVM (Rec. 1.7)
+2. Build the Java project or download the built .jar file
+3. Start the node router Java project from the command line or via IDE. Port 6514 will be used by default if none is given.
+	'''> java -jar noderouter.jar <tcp port>
+4. Start the node server from the command line.
+	'''> node proxy.js
+5. Point a modern browser that Socket.io supports to the proxy file (proxy.html)
+
+The front end and back end will begin communicating when the HTTP connection comes online. Note that the Java backend will attempt to emit TCP server messages as soon as the connection is established, but the message will only be transmitted to the front end via the Node proxy after the HTTP connection has been established.
+
+You may send additional runtime events to the backend via the instructions presented at the proxy.html page.
+
+#### License
+
+This software is released under the MIT license http://opensource.org/licenses/MIT.
+
+### Contact
+
+Forward any feedback to the author at josh dot dickson at wpi dot edu.
+
+
+
