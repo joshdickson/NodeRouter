@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <script src="js/socket.io.js"></script>
+    </head>
+    <body>
+       <p>Hello World</p>
+
+
+
+
+
+
+
+       <script>
+       		var socket;
+
+       		socket = io.connect('http://localhost:2000');
+
+
+			/* 
+			 * A function used to send target data to the server 
+			 */
+			function sendTarget(target) {
+				socket.emit('clientData', target);
+			};
+
+			socket.on('message', function (msg) {
+				console.log(msg);
+ 			});
+
+
+
+ 			setTimeout(sendPayload, 1000);
+
+ 			function sendPayload() {
+
+        waitTime = (Math.random() * 5000) + 5000; // 5000 - 10,000 range
+        waitInt = Math.round(waitTime / 1000);
+        console.log("Client event " + waitInt);
+
+ 				sendTarget("Client event " + waitInt);
+ 				setTimeout(sendPayload, waitTime);
+ 			}
+
+
+
+
+       </script>
+
+
+
+
+
+
+
+    </body>
+</html>
+
+
+

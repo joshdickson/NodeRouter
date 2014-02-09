@@ -1,0 +1,21 @@
+{
+  "name": "nodeproxy",
+  "version": "0.1.0",
+  "description": "A proxy service for linking TCP controlled processed with Node JS-based sockets via sockets.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joshdickson40/nodeproxy.git"
+  },
+  "author": "Joshua Dickson",
+  "dependencies" : {
+    "express": "3.2.x",
+  	"node-static" : "0.6.x",
+    "socket.io" : "0.9.x"
+  },
+  "contributors" : [ {
+    "name" : "Joshua Dickson",
+    "email" : "josh.dickson@wpi.edu",
+    "url" : "https://github.com/joshdickson40"
+  }],
+  "license": "MIT"
+}
