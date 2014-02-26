@@ -1,6 +1,9 @@
 ##NodeRouter
 
 
+[![Build Status](https://travis-ci.org/joshdickson40/NodeRouter.png?branch=master)](https://travis-ci.org/joshdickson40/NodeRouter)
+
+
 #### Overview
 
 NodeRouter is an implementation of an asynchronous linking between two services: A Java-based back end and a Node JS (Specifically the popular Sockets.io package) front end. It's primary use is an illustration of how a lightweight Node proxy can be implemented to address several common Java deficiencies.
