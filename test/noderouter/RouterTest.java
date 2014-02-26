@@ -46,7 +46,7 @@ public class RouterTest {
 		router.send("Test2");
 		
 		// Allow the messages to move through the router
-		TimeUnit.MILLISECONDS.sleep(100);
+		TimeUnit.MILLISECONDS.sleep(1000);
 		
 		// assert that there's received data
 		assertEquals(router.getQueue().size(), 2);
