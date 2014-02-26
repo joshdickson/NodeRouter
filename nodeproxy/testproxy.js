@@ -21,11 +21,7 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-var net = require('net');
-
-var app = require('http').createServer(handler),
-    io = require('socket.io').listen(app),
-    static = require('node-static');
+// Simply repeat input from std in to std out as a test fixture
 
 /**
  * Set up stdin listener
@@ -35,43 +31,6 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('readable', function(chunk) {
   var chunk = process.stdin.read();
   if (chunk !== null) {
-    if(globalSocket) globalSocket.emit('message', data);
+    process.stdout.write(chunk);
   }
 });
-
-
-/**
- * Set up the web server
- */
-var tcpAddress = "localhost";
-var nodeSocket = 2000;
-var globalSocket;
-
-var fileServer = new static.Server('./');
-app.listen(nodeSocket);
-
-function handler (request, response) {
-    request.addListener('end', function () {
-        fileServer.serve(request, response); // this will return the correct file
-    });
-}
-
-/**
- * Set up the socket.io socket 
- */
-io.set('log level', 1);
-io.sockets.on('connection', function (socket) {
-
-    /**
-     * Set the global socket
-     */
-    globalSocket = socket;
-
-    /**
-     * Echo the data event to std out
-     */
-    socket.on('data', function (data) {
-        process.stdout.write(data);
-    });
-});
-
