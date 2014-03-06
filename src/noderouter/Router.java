@@ -33,7 +33,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * A class that illustrates the use of a non blocking TCP linker to a front end web service 
@@ -110,15 +109,11 @@ public class Router implements Closeable {
 						String line = in.readLine();
 												
 						if(line != null)
-							outputQueue.offer(line);
-						else
-							TimeUnit.MILLISECONDS.sleep(5);
+							outputQueue.offer(line);	
 						
 					} catch (IOException e) {
 						e.printStackTrace();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+					} 
 				}
 				
 			}
